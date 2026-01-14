@@ -1,0 +1,37 @@
+# Checkov Configuration File
+# Cấu hình cho việc quét bảo mật và tuân thủ Terraform code
+
+# Bỏ qua các check cụ thể nếu cần (ví dụ)
+# skip-check:
+#   - CKV_AWS_46  # Ensure no hard-coded secrets exist in EC2 user data
+#   - CKV_AWS_79  # Ensure Instance Metadata Service Version 1 is not enabled
+
+# Framework để quét
+framework:
+  - terraform
+
+# Thư mục để quét
+directory:
+  - .
+
+# Output formats
+output:
+  - cli
+  - junitxml
+
+# Soft fail mode - không fail build ngay cả khi có issues
+soft-fail: false
+
+# Compact output
+compact: true
+
+# Download external modules
+download-external-modules: true
+
+# Các check bổ sung
+check:
+  - CKV_AWS_79   # IMDSv2 enabled
+  - CKV_AWS_8    # Encrypted EBS volumes
+  - CKV_AWS_23   # Security groups restrict ingress
+  - CKV_AWS_260  # HTTP security headers
+  - CKV_AWS_130  # VPC Flow Logs enabled

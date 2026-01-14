@@ -1,0 +1,29 @@
+# Terraform Variables Example
+# Copy file này thành terraform.tfvars và điền giá trị thực tế
+# KHÔNG commit file terraform.tfvars vào Git (đã có trong .gitignore)
+
+# AWS Region
+aws_region = "us-east-1"
+
+# AWS Profile (để trống hoặc null nếu dùng environment variables)
+aws_profile = null
+
+# CIDR cho phép SSH vào Public EC2
+# Ví dụ: "123.45.67.89/32" cho IP cụ thể
+# Hoặc: "0.0.0.0/0" cho phép tất cả (không khuyến nghị cho production)
+allowed_ssh_cidr = "0.0.0.0/0"
+
+# Tên EC2 Key Pair đã tạo trên AWS
+# Cần tạo Key Pair trước trong AWS Console: EC2 → Key Pairs
+key_name = "my-ec2-keypair"
+
+# AMI ID cho EC2 instances
+# Ví dụ cho Amazon Linux 2 trong us-east-1: ami-0c55b159cbfafe1f0
+# Ví dụ cho Ubuntu 22.04 trong us-east-1: ami-0261755bbcb8c4a84
+# Tìm AMI ID: aws ec2 describe-images --owners amazon --filters "Name=name,Values=amzn2-ami-hvm-*" --query 'Images[0].ImageId'
+ami_id = "ami-0c55b159cbfafe1f0"
+
+# EC2 Instance Type
+# Free tier: t2.micro
+# Performance: t3.medium, t3.large, etc.
+instance_type = "t2.micro"
