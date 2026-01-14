@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.public_subnet_cidr
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
   tags                    = { Name = "Public-Subnet" }
 }
 
@@ -33,9 +33,10 @@ resource "aws_nat_gateway" "nat" {
 
 # 3. Private Subnet [cite: 15]
 resource "aws_subnet" "private" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.private_subnet_cidr
-  tags       = { Name = "Private-Subnet" }
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.private_subnet_cidr
+  map_public_ip_on_launch = false
+  tags                    = { Name = "Private-Subnet" }
 }
 
 # 4. Route Tables [cite: 18, 20, 21]
