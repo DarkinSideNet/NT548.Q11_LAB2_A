@@ -21,8 +21,16 @@ on:
           - destroy
 
 env:
-  TF_VERSION: '1.7.0'
+  TF_VERSION: '1.14.3'
   AWS_REGION: 'us-east-1'
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   # Job 1: Kiểm tra bảo mật và tuân thủ với Checkov
@@ -46,13 +54,8 @@ jobs:
       - name: Run Checkov scan
         id: checkov
         run: |
-          checkov --directory . \
-            --framework terraform \
-            --output cli \
-            --output junitxml \
-            --output-file-path console,checkov-report.xml \
-            --soft-fail
-        continue-on-error: true
+          checkov --config-file .checkov.yml \
+            --output-file-path console,checkov-report.xml
 
       - name: Upload Checkov results
         uses: actions/upload-artifact@v4
@@ -62,7 +65,7 @@ jobs:
           path: checkov-report.xml
 
       - name: Comment PR with Checkov results
-        if: github.event_name == 'pull_request' && steps.checkov.outcome == 'failure'
+        if: github.event_name == 'pull_request' && failure()
         uses: actions/github-script@v7
         with:
           script: |
@@ -100,7 +103,7 @@ jobs:
         run: terraform validate -no-color
 
       - name: Comment PR with validation results
-        if: github.event_name == 'pull_request' && (steps.fmt.outcome == 'failure' || steps.validate.outcome == 'failure')
+        if: github.event_name == 'pull_request' && always()
         uses: actions/github-script@v7
         with:
           script: |
@@ -122,12 +125,20 @@ jobs:
               body: message
             })
 
+      - name: Fail workflow if fmt failed
+        if: steps.fmt.outcome == 'failure'
+        run: |
+          echo "Terraform formatting check failed. Run: terraform fmt -recursive" >&2
+          exit 1
+
   # Job 3: Terraform Plan
   terraform-plan:
     name: 'Terraform Plan'
     runs-on: ubuntu-latest
     needs: [security-scan, terraform-validate]
-    if: github.event_name == 'pull_request'
+    if: |
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false) ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'plan')
     
     steps:
       - name: Checkout code
@@ -156,31 +167,30 @@ jobs:
             -var="key_name=${{ secrets.KEY_NAME }}" \
             -var="ami_id=${{ secrets.AMI_ID }}" \
             -var="instance_type=${{ secrets.INSTANCE_TYPE }}"
+          terraform show -no-color tfplan > plan.txt
         continue-on-error: true
 
       - name: Save Terraform Plan
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: tfplan
+          path: |
+            tfplan
+            plan.txt
 
       - name: Comment PR with Plan
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const output = `### Terraform Plan Results
-            
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-            
-            <details><summary>Show Plan</summary>
-            
-            \`\`\`terraform
-            ${{ steps.plan.outputs.stdout }}
-            \`\`\`
-            
-            </details>
-            
-            *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+            const fs = require('fs');
+            const planText = fs.existsSync('plan.txt') ? fs.readFileSync('plan.txt', 'utf8') : '(plan output not found)';
+            const output = `### Terraform Plan Results\n\n` +
+              `#### Terraform Plan 📖\`${{ steps.plan.outcome }}\`\n\n` +
+              `<details><summary>Show Plan</summary>\n\n` +
+              `\`\`\`terraform\n${planText}\n\`\`\`\n\n` +
+              `</details>\n\n` +
+              `*Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
             
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -194,7 +204,9 @@ jobs:
     name: 'Terraform Apply'
     runs-on: ubuntu-latest
     needs: [security-scan, terraform-validate]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: |
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'apply'))
     environment: production
     
     steps:
@@ -246,7 +258,10 @@ jobs:
   terraform-destroy:
     name: 'Terraform Destroy'
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'destroy'
+    if: |
+      github.ref == 'refs/heads/main' &&
+      github.event_name == 'workflow_dispatch' &&
+      github.event.inputs.action == 'destroy'
     environment: production-destroy
     
     steps:

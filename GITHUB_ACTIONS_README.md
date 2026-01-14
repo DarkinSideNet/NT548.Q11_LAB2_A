@@ -10,6 +10,7 @@ Workflow này tự động hóa quá trình triển khai Terraform lên AWS vớ
 - **Công cụ**: Checkov
 - **Khi chạy**: Mỗi khi push hoặc tạo pull request
 - **Output**: Báo cáo XML được upload làm artifact
+- **Lưu ý**: Nếu Checkov phát hiện issue theo cấu hình trong `.checkov.yml` thì job sẽ **fail** (để chặn merge nếu bạn bật branch protection).
 
 ### 2. Terraform Validate
 - **Mục đích**: Kiểm tra format và validate cú pháp Terraform
@@ -20,14 +21,18 @@ Workflow này tự động hóa quá trình triển khai Terraform lên AWS vớ
 
 ### 3. Terraform Plan
 - **Mục đích**: Tạo execution plan để xem trước các thay đổi
-- **Khi chạy**: Chỉ trên pull requests
+- **Khi chạy**:
+  - Trên pull requests (chỉ khi PR không phải từ fork vì fork không có quyền dùng secrets)
+  - Hoặc manual trigger `workflow_dispatch` với action = `plan`
 - **Output**: 
   - Plan được lưu làm artifact
   - Comment trên PR với kết quả plan
 
 ### 4. Terraform Apply
 - **Mục đích**: Triển khai infrastructure lên AWS
-- **Khi chạy**: Chỉ khi merge vào branch `main`
+- **Khi chạy**:
+  - Tự động khi push/merge vào branch `main`
+  - Hoặc manual trigger `workflow_dispatch` với action = `apply` (khuyến nghị chạy trên branch `main`)
 - **Environment**: `production` (yêu cầu manual approval nếu được cấu hình)
 - **Output**: Terraform outputs được lưu làm artifact
 
@@ -70,6 +75,8 @@ Cấu hình các secrets sau trong GitHub repository:
    - Tạo và comment Terraform plan trên PR
 6. Review kết quả và merge nếu OK
 
+> Nếu PR đến từ fork, job `Terraform Plan` sẽ bị skip vì GitHub không cấp secrets cho workflow trên fork.
+
 ### Deployment Workflow
 1. Merge PR vào branch `main`
 2. Workflow tự động chạy `terraform apply`
@@ -82,6 +89,13 @@ Cấu hình các secrets sau trong GitHub repository:
 3. Click "Run workflow"
 4. Chọn branch và confirm
 5. Infrastructure sẽ bị xóa
+
+## Manual Plan/Apply
+
+1. Vào tab **Actions** → chọn workflow **Terraform CI/CD with Checkov**
+2. Click **Run workflow**
+3. Chọn branch (khuyến nghị `main`)
+4. Chọn input `action`: `plan` hoặc `apply`
 
 ## Environments
 
