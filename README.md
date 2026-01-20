@@ -5,18 +5,18 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-2088FF?logo=github-actions)](https://github.com/features/actions)
 [![Checkov](https://img.shields.io/badge/Checkov-Security-00C7B7?logo=checkov)](https://www.checkov.io/)
 
-> **LAB 2 - NT548.Q11**: Triển khai hạ tầng AWS tự động với Terraform và GitHub Actions...
+ **LAB 2 - NT548.Q11**: Triển khai hạ tầng AWS tự động với Terraform và GitHub Actions...
 
-## 📋 Mô tả
+##  Mô tả
 Project này triển khai hạ tầng AWS sử dụng Terraform và tự động hóa quy trình CI/CD với GitHub Actions, bao gồm kiểm tra bảo mật với Checkov.
 
-## ⭐ Features
-- ✅ **Infrastructure as Code**: Quản lý hạ tầng AWS với Terraform
-- ✅ **Automated CI/CD**: GitHub Actions tự động hóa deployment
-- ✅ **Security Scanning**: Tích hợp Checkov cho compliance checks
-- ✅ **Pull Request Workflow**: Tự động plan và comment trên PR
-- ✅ **Environment Protection**: Manual approval cho production
-- ✅ **Cost Optimization**: Theo dõi và tối ưu chi phí
+##  Features
+-  **Infrastructure as Code**: Quản lý hạ tầng AWS với Terraform
+-  **Automated CI/CD**: GitHub Actions tự động hóa deployment
+-  **Security Scanning**: Tích hợp Checkov cho compliance checks
+-  **Pull Request Workflow**: Tự động plan và comment trên PR
+-  **Environment Protection**: Manual approval cho production
+-  **Cost Optimization**: Theo dõi và tối ưu chi phí
 
 ## Kiến trúc hạ tầng
 
@@ -47,27 +47,27 @@ Project này triển khai hạ tầng AWS sử dụng Terraform và tự động
 
 ## Tính năng GitHub Actions
 
-### 🔒 Security Scan
+###  Security Scan
 - Tự động quét code với **Checkov**
 - Kiểm tra tuân thủ security best practices
 - Upload báo cáo bảo mật
 
-### ✅ Validation
+###  Validation
 - Terraform format check
 - Terraform validate
 - Comment kết quả trên PR
 
-### 📋 Plan
+###  Plan
 - Tự động tạo Terraform plan cho PR
 - Preview thay đổi trước khi merge
 - Comment plan details trên PR
 
-### 🚀 Deploy
+###  Deploy
 - Tự động deploy khi merge vào `main`
 - Manual approval với GitHub Environments
 - Upload outputs làm artifacts
 
-### 🗑️ Destroy
+###  Destroy
 - Manual trigger để destroy infrastructure
 - Protected environment với approvals
 - Safety checks
@@ -153,10 +153,10 @@ git push origin feature/your-feature
 ```
 
 4. GitHub Actions sẽ tự động:
-   - ✅ Run Checkov security scan
-   - ✅ Validate Terraform code
-   - ✅ Generate Terraform plan
-   - ✅ Comment results on PR
+   -  Run Checkov security scan
+   -  Validate Terraform code
+   -  Generate Terraform plan
+   -  Comment results on PR
 
 5. Review và merge PR
 
@@ -165,11 +165,11 @@ git push origin feature/your-feature
 ## Checkov Security Checks
 
 Workflow tích hợp Checkov để kiểm tra:
-- ✅ IMDSv2 enabled cho EC2
-- ✅ EBS volumes được encrypted
-- ✅ Security groups restrictions
-- ✅ VPC Flow Logs
-- ✅ Best practices compliance
+-  IMDSv2 enabled cho EC2
+-  EBS volumes được encrypted
+-  Security groups restrictions
+-  VPC Flow Logs
+-  Best practices compliance
 
 Xem cấu hình trong [.checkov.yml](.checkov.yml)
 
@@ -231,13 +231,13 @@ Xem thêm trong [SETUP_GUIDE.md](SETUP_GUIDE.md#troubleshooting)
 
 ## Security Best Practices
 
-1. ✅ Không commit sensitive data (`.tfvars`, keys)
-2. ✅ Sử dụng GitHub Secrets cho credentials
-3. ✅ Enable branch protection trên `main`
-4. ✅ Require PR reviews trước khi merge
-5. ✅ Enable manual approval cho production deploys
-6. ✅ Regular security scans với Checkov
-7. ✅ Sử dụng S3 backend cho state management
+1.  Không commit sensitive data (`.tfvars`, keys)
+2.  Sử dụng GitHub Secrets cho credentials
+3.  Enable branch protection trên `main`
+4.  Require PR reviews trước khi merge
+5.  Enable manual approval cho production deploys
+6.  Regular security scans với Checkov
+7.  Sử dụng S3 backend cho state management
 
 ## Cost Optimization
 

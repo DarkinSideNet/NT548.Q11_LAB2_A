@@ -75,7 +75,7 @@ Cấu hình các secrets sau trong GitHub repository:
    - Tạo và comment Terraform plan trên PR
 6. Review kết quả và merge nếu OK
 
-> Nếu PR đến từ fork, job `Terraform Plan` sẽ bị skip vì GitHub không cấp secrets cho workflow trên fork.
+ Nếu PR đến từ fork, job `Terraform Plan` sẽ bị skip vì GitHub không cấp secrets cho workflow trên fork.
 
 ### Deployment Workflow
 1. Merge PR vào branch `main`
@@ -104,15 +104,15 @@ Nên cấu hình environments trong GitHub để bảo vệ:
 ### Production Environment
 - Settings → Environments → New environment: `production`
 - Thêm protection rules:
-  - ✅ Required reviewers (1-6 reviewers)
-  - ✅ Wait timer (optional)
-  - ✅ Restrict to specific branches: `main`
+  -  Required reviewers (1-6 reviewers)
+  -  Wait timer (optional)
+  -  Restrict to specific branches: `main`
 
 ### Production Destroy Environment
 - Settings → Environments → New environment: `production-destroy`
 - Thêm protection rules:
-  - ✅ Required reviewers (ít nhất 2 reviewers)
-  - ⚠️ Cảnh báo: Environment này cho phép destroy infrastructure
+  -  Required reviewers (ít nhất 2 reviewers)
+  -  Cảnh báo: Environment này cho phép destroy infrastructure
 
 ## Backend Configuration (Optional)
 

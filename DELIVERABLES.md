@@ -1,6 +1,6 @@
-# 📦 LAB 2 - Project Deliverables Summary
+# LAB 2 - Project Deliverables Summary
 
-## ✅ Hoàn thành đầy đủ yêu cầu bài lab
+##  Hoàn thành đầy đủ yêu cầu bài lab
 
 ### 1. Terraform Infrastructure (Đã có sẵn) ✓
 - [x] VPC với CIDR 10.0.0.0/16
@@ -27,7 +27,7 @@
 - [x] Cấu hình file .checkov.yml
 - [x] Kiểm tra các best practices
 
-## 📁 Files đã tạo
+## Files đã tạo
 
 ### Core Configuration Files
 ```
@@ -61,7 +61,7 @@
 ✓ setup-verify.ps1                      # Setup verification script
 ```
 
-## 🎯 Chức năng chính
+## Chức năng chính
 
 ### GitHub Actions Workflow
 
@@ -114,7 +114,7 @@ Actions:
 Environment: production-destroy (với approval)
 ```
 
-## 🔐 GitHub Secrets cần thiết
+## GitHub Secrets cần thiết
 
 | Secret | Mô tả | Ví dụ |
 |--------|-------|-------|
@@ -125,33 +125,33 @@ Environment: production-destroy (với approval)
 | `AMI_ID` | AMI ID cho EC2 | ami-0c55b159cbfafe1f0 |
 | `INSTANCE_TYPE` | EC2 instance type | t2.micro |
 
-## 📊 Workflow Features
+## Workflow Features
 
 ### Security & Compliance
-- ✅ Checkov security scanning
-- ✅ Compliance checks
-- ✅ Security report generation
-- ✅ Automated vulnerability detection
+-  Checkov security scanning
+-  Compliance checks
+-  Security report generation
+-  Automated vulnerability detection
 
 ### Code Quality
-- ✅ Terraform formatting check
-- ✅ Configuration validation
-- ✅ Pre-commit hooks support
-- ✅ Best practices enforcement
+-  Terraform formatting check
+-  Configuration validation
+-  Pre-commit hooks support
+-  Best practices enforcement
 
 ### CI/CD Automation
-- ✅ Automated planning on PR
-- ✅ Automated deployment on merge
-- ✅ Manual approval gates
-- ✅ Artifact preservation
+-  Automated planning on PR
+-  Automated deployment on merge
+-  Manual approval gates
+-  Artifact preservation
 
 ### Observability
-- ✅ PR comments with plan details
-- ✅ Security scan results
-- ✅ Downloadable reports
-- ✅ Terraform outputs
+-  PR comments with plan details
+-  Security scan results
+-  Downloadable reports
+-  Terraform outputs
 
-## 🚀 Quick Start Guide
+##  Quick Start Guide
 
 ### Step 1: Clone & Setup
 ```bash
@@ -182,31 +182,31 @@ git push origin test/workflow
 # Approve in environment if configured
 ```
 
-## 📈 Expected Results
+## Expected Results
 
 ### When creating a PR:
-1. ✅ Checkov security scan runs
-2. ✅ Terraform validation runs
-3. ✅ Terraform plan generated
-4. ✅ Results commented on PR
-5. ✅ Artifacts uploaded
+1.  Checkov security scan runs
+2.  Terraform validation runs
+3.  Terraform plan generated
+4.  Results commented on PR
+5.  Artifacts uploaded
 
 ### When merging to main:
-1. ✅ All checks run again
-2. ✅ Terraform apply executes
-3. ✅ Infrastructure deployed to AWS
-4. ✅ Outputs saved as artifact
+1.  All checks run again
+2.  Terraform apply executes
+3.  Infrastructure deployed to AWS
+4.  Outputs saved as artifact
 
 ### AWS Resources Created:
-- ✅ 1x VPC
-- ✅ 2x Subnets (Public + Private)
-- ✅ 2x Route Tables
-- ✅ 1x Internet Gateway
-- ✅ 1x NAT Gateway
-- ✅ 2x Security Groups
-- ✅ 2x EC2 Instances
+-  1x VPC
+-  2x Subnets (Public + Private)
+-  2x Route Tables
+-  1x Internet Gateway
+-  1x NAT Gateway
+-  2x Security Groups
+-  2x EC2 Instances
 
-## 💡 Key Features
+##  Key Features
 
 ### 1. Automated Security Scanning
 ```
@@ -245,7 +245,7 @@ Workflow Dispatch:
   → Full control when needed
 ```
 
-## 📚 Documentation Structure
+##  Documentation Structure
 
 ### For Setup
 1. **SETUP_GUIDE.md** - Complete setup walkthrough
@@ -262,7 +262,7 @@ Workflow Dispatch:
 2. **Pull Request Template** - PR guidelines
 3. **Issue Templates** - Bug reports & features
 
-## ✨ Advanced Features (Included)
+##  Advanced Features (Included)
 
 ### Pre-commit Hooks
 ```bash
@@ -282,25 +282,25 @@ make test       # Run all checks
 ```
 
 ### Security Features
-- ✅ Secret scanning prevention
-- ✅ No hardcoded credentials
-- ✅ Encrypted GitHub Secrets
-- ✅ IAM best practices
-- ✅ Security group restrictions
+-  Secret scanning prevention
+-  No hardcoded credentials
+-  Encrypted GitHub Secrets
+-  IAM best practices
+-  Security group restrictions
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 Sau khi hoàn thành LAB 2, bạn sẽ:
 
-1. ✅ Hiểu cách tự động hóa Infrastructure as Code
-2. ✅ Biết cách sử dụng GitHub Actions cho CI/CD
-3. ✅ Nắm được security scanning với Checkov
-4. ✅ Quản lý secrets an toàn
-5. ✅ Implement environment protection
-6. ✅ Sử dụng pull request workflow
-7. ✅ Debug và troubleshoot automation issues
+1.  Hiểu cách tự động hóa Infrastructure as Code
+2.  Biết cách sử dụng GitHub Actions cho CI/CD
+3.  Nắm được security scanning với Checkov
+4.  Quản lý secrets an toàn
+5.  Implement environment protection
+6.  Sử dụng pull request workflow
+7.  Debug và troubleshoot automation issues
 
-## 📊 Scoring Criteria (3 điểm)
+##  Scoring Criteria (3 điểm)
 
 ### 1. Terraform Infrastructure (1 điểm)
 - [x] VPC configured correctly
@@ -323,24 +323,24 @@ Sau khi hoàn thành LAB 2, bạn sẽ:
 - [x] Integration with workflow
 - [x] Issues properly reported
 
-## 🎯 Next Steps
+##  Next Steps
 
 ### Immediate
-1. ✅ Review all documentation
-2. ✅ Run setup-verify.ps1
-3. ✅ Configure GitHub secrets
-4. ✅ Test workflow with PR
-5. ✅ Deploy to AWS
+1.  Review all documentation
+2.  Run setup-verify.ps1
+3.  Configure GitHub secrets
+4.  Test workflow with PR
+5.  Deploy to AWS
 
 ### Optional Enhancements
-1. ⭐ Add S3 backend for state
-2. ⭐ Implement cost estimation (Infracost)
-3. ⭐ Add multi-environment support
-4. ⭐ Setup monitoring & alerting
-5. ⭐ Implement automated testing
-6. ⭐ Add Slack/Discord notifications
+1.  Add S3 backend for state
+2.  Implement cost estimation (Infracost)
+3.  Add multi-environment support
+4.  Setup monitoring & alerting
+5.  Implement automated testing
+6.  Add Slack/Discord notifications
 
-## 📞 Support & Resources
+## Support & Resources
 
 ### Documentation
 - [SETUP_GUIDE.md](SETUP_GUIDE.md) - Full setup guide
@@ -353,7 +353,7 @@ Sau khi hoàn thành LAB 2, bạn sẽ:
 - [Checkov Documentation](https://www.checkov.io/)
 - [AWS Best Practices](https://aws.amazon.com/architecture/well-architected/)
 
-## ✅ Verification Checklist
+##  Verification Checklist
 
 Before submission, verify:
 - [ ] All required files present
@@ -367,13 +367,13 @@ Before submission, verify:
 - [ ] Branch protection enabled
 - [ ] Environment configured
 
-## 🎉 Conclusion
+##  Conclusion
 
 Project LAB 2 đã hoàn thành với đầy đủ các yêu cầu:
 
-✅ **Terraform Infrastructure** - VPC, Route Tables, NAT Gateway, EC2, Security Groups
-✅ **GitHub Actions Automation** - Full CI/CD pipeline
-✅ **Checkov Integration** - Security and compliance scanning
+ **Terraform Infrastructure** - VPC, Route Tables, NAT Gateway, EC2, Security Groups
+ **GitHub Actions Automation** - Full CI/CD pipeline
+ **Checkov Integration** - Security and compliance scanning
 
 Tất cả files cần thiết đã được tạo và cấu hình đúng. Workflow sẽ tự động:
 - Scan security với Checkov
@@ -385,6 +385,5 @@ Tất cả files cần thiết đã được tạo và cấu hình đúng. Workf
 Follow SETUP_GUIDE.md để triển khai và test!
 
 ---
-**Student**: [Your Name]
 **Course**: NT548.Q11 - LAB 2
 **Date**: January 2026

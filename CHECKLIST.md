@@ -1,6 +1,6 @@
 # Checklist Setup GitHub Actions và Terraform
 
-## ✅ Checklist hoàn thành LAB 2
+## Checklist hoàn thành LAB 2
 
 ### Phase 1: Setup Repository (15 phút)
 - [ ] Tạo GitHub repository mới
@@ -125,7 +125,7 @@
 - [ ] Clean up test branches
 - [ ] Update documentation với lessons learned
 
-## 📊 Deliverables
+## Deliverables
 
 ### Code & Configuration
 - [x] Terraform modules (VPC, EC2, Security Groups)
@@ -154,7 +154,7 @@
 - [ ] AWS Console showing deployed resources
 - [ ] GitHub repository settings (secrets, environments)
 
-## 🎯 Rubric (3 điểm)
+## Rubric (3 điểm)
 
 ### Terraform Infrastructure (1 điểm)
 - [ ] VPC được triển khai đúng
@@ -182,7 +182,7 @@
 
 **Tổng điểm**: ___/3 điểm
 
-## 📝 Notes
+## Notes
 
 ### Thời gian ước tính
 - Setup cơ bản: 1-2 giờ
@@ -191,24 +191,24 @@
 - Advanced features: 1-2 giờ (optional)
 
 ### Common Pitfalls
-1. ❌ Quên cấu hình AWS credentials
-2. ❌ Secrets không đúng format
-3. ❌ AMI ID không tồn tại trong region
-4. ❌ Key Pair chưa được tạo trên AWS
-5. ❌ Commit file `.tfvars` vào Git
-6. ❌ Không enable branch protection
-7. ❌ Quên approve deployment trong environment
+1.  Quên cấu hình AWS credentials
+2.  Secrets không đúng format
+3.  AMI ID không tồn tại trong region
+4.  Key Pair chưa được tạo trên AWS
+5.  Commit file `.tfvars` vào Git
+6.  Không enable branch protection
+7.  Quên approve deployment trong environment
 
 ### Tips
-1. ✅ Test workflow trên branch riêng trước
-2. ✅ Sử dụng `t2.micro` cho cost-effective testing
-3. ✅ Enable auto-destroy sau X giờ để tiết kiệm
-4. ✅ Review Terraform plan cẩn thận trước khi approve
-5. ✅ Keep secrets safe, never commit to Git
-6. ✅ Use S3 backend cho production
-7. ✅ Monitor AWS costs regularly
+1.  Test workflow trên branch riêng trước
+2.  Sử dụng `t2.micro` cho cost-effective testing
+3.  Enable auto-destroy sau X giờ để tiết kiệm
+4.  Review Terraform plan cẩn thận trước khi approve
+5.  Keep secrets safe, never commit to Git
+6.  Use S3 backend cho production
+7.  Monitor AWS costs regularly
 
-## 🆘 Support
+## Support
 
 Nếu gặp vấn đề:
 1. Check [SETUP_GUIDE.md](SETUP_GUIDE.md) troubleshooting section
@@ -217,7 +217,7 @@ Nếu gặp vấn đề:
 4. Check AWS IAM permissions
 5. Review Terraform error messages
 
-## ✨ Bonus Points
+## Bonus Points
 
 - [ ] Implement monitoring & alerting
 - [ ] Add cost estimation with Infracost

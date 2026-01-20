@@ -1,8 +1,8 @@
-# 🚀 Getting Started - LAB 2
+# Getting Started - LAB 2
 
-> **Quick start guide để triển khai LAB 2 trong 30 phút**
+ **Quick start guide để triển khai LAB 2 trong 30 phút**
 
-## 📋 Prerequisites (5 phút)
+##  Prerequisites (5 phút)
 
 ### Required Tools
 - [ ] Terraform >= 1.3.0
@@ -17,7 +17,7 @@
 ./setup-verify.ps1
 ```
 
-## ⚡ Quick Setup (10 phút)
+## Quick Setup
 
 ### Step 1: Create GitHub Repository
 ```bash
@@ -68,7 +68,7 @@ Create:
    - Required reviewers: yourself
    - For destroy operations
 
-## 🧪 Test Workflow (10 phút)
+## Test Workflow
 
 ### Test 1: Create PR to test security scan
 ```bash
@@ -112,7 +112,7 @@ Then:
 3. Approve deployment if environment protection is enabled
 4. Verify resources in AWS Console
 
-## ✅ Verification (5 phút)
+## Verification 
 
 ### Check GitHub Actions
 - [ ] Go to Actions tab
@@ -143,28 +143,28 @@ aws ec2 describe-instances \
 ssh -i your-key.pem ec2-user@<public-ip>
 ```
 
-## 📊 What You Get
+## What You Get
 
 ### Automated Workflows
-✅ **Security Scanning**: Every push and PR
-✅ **Code Validation**: Automatic format and validate
-✅ **PR Planning**: See changes before merge
-✅ **Auto Deployment**: Deploy on merge to main
-✅ **Manual Control**: Trigger plan/apply/destroy manually
+ **Security Scanning**: Every push and PR
+ **Code Validation**: Automatic format and validate
+ **PR Planning**: See changes before merge
+ **Auto Deployment**: Deploy on merge to main
+ **Manual Control**: Trigger plan/apply/destroy manually
 
 ### Infrastructure
-✅ **Complete VPC**: With public and private subnets
-✅ **High Availability**: NAT Gateway for private instances
-✅ **Security**: Properly configured Security Groups
-✅ **Compute**: 2 EC2 instances (public & private)
+ **Complete VPC**: With public and private subnets
+ **High Availability**: NAT Gateway for private instances
+ **Security**: Properly configured Security Groups
+ **Compute**: 2 EC2 instances (public & private)
 
 ### Documentation
-✅ **7 Comprehensive Guides**: Setup, reference, architecture, etc.
-✅ **Templates**: PR and issue templates
-✅ **Scripts**: Automated verification
-✅ **Examples**: Configuration examples
+ **7 Comprehensive Guides**: Setup, reference, architecture, etc.
+ **Templates**: PR and issue templates
+ **Scripts**: Automated verification
+ **Examples**: Configuration examples
 
-## 🎯 Common Tasks
+##  Common Tasks
 
 ### Make Infrastructure Changes
 ```bash
@@ -226,7 +226,7 @@ terraform apply
 terraform destroy
 ```
 
-## 📚 Documentation Guide
+##  Documentation Guide
 
 ### For First-Time Setup
 1. Start with: **SETUP_GUIDE.md**
@@ -243,7 +243,7 @@ terraform destroy
 2. Structure: **PROJECT_STRUCTURE.md**
 3. Deliverables: **DELIVERABLES.md**
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Workflow Fails
 ```bash
@@ -293,53 +293,53 @@ curl ifconfig.me
 # Re-run workflow to update SG
 ```
 
-## 💡 Tips & Best Practices
+##  Tips & Best Practices
 
 ### Development
-✅ Always create PRs for changes
-✅ Review Terraform plan before merging
-✅ Check Checkov reports
-✅ Use feature branches
-✅ Write descriptive commit messages
+ Always create PRs for changes
+ Review Terraform plan before merging
+ Check Checkov reports
+ Use feature branches
+ Write descriptive commit messages
 
 ### Security
-✅ Never commit .tfvars files
-✅ Use GitHub Secrets for credentials
-✅ Enable branch protection
-✅ Require PR reviews
-✅ Review security scan results
+ Never commit .tfvars files
+ Use GitHub Secrets for credentials
+ Enable branch protection
+ Require PR reviews
+ Review security scan results
 
 ### Cost Management
-✅ Use t2.micro for testing (free tier)
-✅ Destroy when not needed
-✅ Monitor AWS billing
-✅ Set up billing alerts
-✅ Review resource usage
+ Use t2.micro for testing (free tier)
+ Destroy when not needed
+ Monitor AWS billing
+ Set up billing alerts
+ Review resource usage
 
-## 🎓 Learning Path
+##  Learning Path
 
 ### Beginner
-1. ✅ Run setup-verify.ps1
-2. ✅ Read SETUP_GUIDE.md
-3. ✅ Configure GitHub secrets
-4. ✅ Create first PR
-5. ✅ Deploy infrastructure
+1.  Run setup-verify.ps1
+2.  Read SETUP_GUIDE.md
+3.  Configure GitHub secrets
+4.  Create first PR
+5.  Deploy infrastructure
 
 ### Intermediate
-1. ⭐ Customize Terraform modules
-2. ⭐ Modify workflow jobs
-3. ⭐ Add S3 backend
-4. ⭐ Setup pre-commit hooks
-5. ⭐ Configure environments
+1.  Customize Terraform modules
+2.  Modify workflow jobs
+3.  Add S3 backend
+4.  Setup pre-commit hooks
+5.  Configure environments
 
 ### Advanced
-1. 🚀 Multi-environment setup
-2. 🚀 Cost estimation (Infracost)
-3. 🚀 Automated testing
-4. 🚀 Drift detection
-5. 🚀 Custom Checkov policies
+1.  Multi-environment setup
+2.  Cost estimation (Infracost)
+3.  Automated testing
+4.  Drift detection
+5.  Custom Checkov policies
 
-## 📞 Need Help?
+##  Need Help?
 
 ### Documentation
 - **SETUP_GUIDE.md** - Full setup instructions
@@ -358,7 +358,7 @@ curl ifconfig.me
 - `Makefile` - Common commands
 - `.pre-commit` - Git hooks
 
-## ✨ Next Steps
+##  Next Steps
 
 After completing basic setup:
 
@@ -380,17 +380,17 @@ After completing basic setup:
 3. [ ] Monitoring & alerting
 4. [ ] Cost optimization
 
-## 🎉 Success Criteria
+##  Success Criteria
 
 You're done when:
-- ✅ All workflows run successfully
-- ✅ Infrastructure deploys to AWS
-- ✅ PR comments show plans
-- ✅ Security scans complete
-- ✅ Documentation reviewed
-- ✅ Cleanup works (destroy)
+-  All workflows run successfully
+-  Infrastructure deploys to AWS
+-  PR comments show plans
+-  Security scans complete
+-  Documentation reviewed
+-  Cleanup works (destroy)
 
-## 📝 Checklist
+##  Checklist
 
 ### Setup Phase
 - [ ] Tools installed and verified
@@ -422,20 +422,20 @@ You're done when:
 
 ---
 
-## 🏁 Final Notes
+##  Final Notes
 
 **Time to Complete**: 30-60 minutes
 **Difficulty**: Intermediate
 **Prerequisites**: Basic Terraform, AWS, Git knowledge
 
 **What Makes This Special**:
-- ✅ Fully automated CI/CD
-- ✅ Security-first approach
-- ✅ Production-ready setup
-- ✅ Comprehensive documentation
-- ✅ Best practices included
+-  Fully automated CI/CD
+-  Security-first approach
+-  Production-ready setup
+-  Comprehensive documentation
+-  Best practices included
 
-**You're Ready!** 🚀
+**You're Ready!** 
 
 Start with:
 ```powershell

@@ -77,8 +77,8 @@ Giá trị: t2.micro
 2. Click **New environment**
 3. Tên: `production`
 4. Cấu hình Protection rules:
-   - ✅ **Required reviewers**: Chọn người cần approve (có thể là chính bạn)
-   - ✅ **Deployment branches**: Chọn "Selected branches" → Thêm `main`
+   -  **Required reviewers**: Chọn người cần approve (có thể là chính bạn)
+   -  **Deployment branches**: Chọn "Selected branches" → Thêm `main`
 5. Click **Save protection rules**
 
 ### Tạo Production Destroy Environment
@@ -86,8 +86,8 @@ Giá trị: t2.micro
 1. Click **New environment**
 2. Tên: `production-destroy`
 3. Cấu hình Protection rules:
-   - ✅ **Required reviewers**: Chọn ít nhất 1-2 người
-   - ⚠️ Environment này dùng để destroy infrastructure, cần cẩn thận
+   -  **Required reviewers**: Chọn ít nhất 1-2 người
+   -  Environment này dùng để destroy infrastructure, cần cẩn thận
 4. Click **Save protection rules**
 
 ## Bước 4: Cấu hình Branch Protection (Khuyến nghị)
@@ -96,11 +96,11 @@ Giá trị: t2.micro
 2. Click **Add rule**
 3. Branch name pattern: `main`
 4. Chọn:
-   - ✅ **Require a pull request before merging**
-   - ✅ **Require status checks to pass before merging**
+   -  **Require a pull request before merging**
+   -  **Require status checks to pass before merging**
      - Tìm và thêm: `Checkov Security Scan`, `Terraform Format & Validate`
-   - ✅ **Require branches to be up to date before merging**
-   - ✅ **Do not allow bypassing the above settings**
+   -  **Require branches to be up to date before merging**
+   -  **Do not allow bypassing the above settings**
 5. Click **Create**
 
 ## Bước 5: Test Workflow
@@ -191,12 +191,12 @@ git push origin test-workflow
 
 ## Best Practices
 
-1. ✅ **Không commit secrets** vào code
-2. ✅ **Luôn tạo PR** trước khi merge vào main
-3. ✅ **Review Terraform plan** trước khi approve
-4. ✅ **Sử dụng S3 backend** cho production (xem bên dưới)
-5. ✅ **Tag releases** để tracking
-6. ✅ **Enable notifications** cho workflow failures
+1.  **Không commit secrets** vào code
+2.  **Luôn tạo PR** trước khi merge vào main
+3.  **Review Terraform plan** trước khi approve
+4.  **Sử dụng S3 backend** cho production (xem bên dưới)
+5.  **Tag releases** để tracking
+6.  **Enable notifications** cho workflow failures
 
 ## (Optional) Cấu hình S3 Backend
 

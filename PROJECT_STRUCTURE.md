@@ -1,63 +1,63 @@
-# 📂 Project Structure
+#  Project Structure
 
 ## Complete File Tree
 
 ```
 LAB_2/
 │
-├── 📄 main.tf                          # Root module - orchestrates all modules
-├── 📄 variables.tf                     # Input variables definitions
-├── 📄 outputs.tf                       # Output values
-├── 📄 providers.tf                     # Terraform & AWS provider config
-├── 📄 terraform.tfvars.example         # Example variables file
-├── 📄 terraform.tfvars                 # Actual variables (DO NOT COMMIT)
+├──  main.tf                          # Root module - orchestrates all modules
+├──  variables.tf                     # Input variables definitions
+├──  outputs.tf                       # Output values
+├──  providers.tf                     # Terraform & AWS provider config
+├──  terraform.tfvars.example         # Example variables file
+├──  terraform.tfvars                 # Actual variables (DO NOT COMMIT)
 │
-├── 📁 modules/                         # Terraform modules
-│   ├── 📁 vpc/                         # VPC module
-│   │   ├── 📄 main.tf                  # VPC, Subnets, IGW, NAT, Routes
-│   │   ├── 📄 variables.tf             # Module variables
-│   │   └── 📄 outputs.tf               # Module outputs
+├──  modules/                         # Terraform modules
+│   ├──  vpc/                         # VPC module
+│   │   ├──  main.tf                  # VPC, Subnets, IGW, NAT, Routes
+│   │   ├──  variables.tf             # Module variables
+│   │   └──  outputs.tf               # Module outputs
 │   │
-│   ├── 📁 security_groups/             # Security Groups module
-│   │   ├── 📄 main.tf                  # Security group definitions
-│   │   ├── 📄 variables.tf             # Module variables
-│   │   └── 📄 outputs.tf               # Module outputs
+│   ├──  security_groups/             # Security Groups module
+│   │   ├──  main.tf                  # Security group definitions
+│   │   ├──  variables.tf             # Module variables
+│   │   └──  outputs.tf               # Module outputs
 │   │
-│   └── 📁 ec2/                         # EC2 module
-│       ├── 📄 main.tf                  # EC2 instance definitions
-│       ├── 📄 variables.tf             # Module variables
-│       └── 📄 outputs.tf               # Module outputs
+│   └──  ec2/                         # EC2 module
+│       ├──  main.tf                  # EC2 instance definitions
+│       ├──  variables.tf             # Module variables
+│       └──  outputs.tf               # Module outputs
 │
-├── 📁 .github/                         # GitHub configuration
-│   ├── 📁 workflows/                   # GitHub Actions workflows
-│   │   └── 📄 terraform.yml            # Main CI/CD workflow
+├──  .github/                         # GitHub configuration
+│   ├──  workflows/                   # GitHub Actions workflows
+│   │   └──  terraform.yml            # Main CI/CD workflow
 │   │
-│   ├── 📁 ISSUE_TEMPLATE/              # Issue templates
-│   │   ├── 📄 bug_report.md            # Bug report template
-│   │   └── 📄 feature_request.md       # Feature request template
+│   ├──  ISSUE_TEMPLATE/              # Issue templates
+│   │   ├──  bug_report.md            # Bug report template
+│   │   └──  feature_request.md       # Feature request template
 │   │
-│   └── 📄 pull_request_template.md     # PR template
+│   └──  pull_request_template.md     # PR template
 │
-├── 📄 .checkov.yml                     # Checkov configuration
-├── 📄 .gitignore                       # Git ignore rules
-├── 📄 .pre-commit-config.yaml          # Pre-commit hooks config
-├── 📄 Makefile                         # Common commands
+├──  .checkov.yml                     # Checkov configuration
+├──  .gitignore                       # Git ignore rules
+├──  .pre-commit-config.yaml          # Pre-commit hooks config
+├──  Makefile                         # Common commands
 │
-├── 📄 README.md                        # Main project documentation
-├── 📄 SETUP_GUIDE.md                   # Detailed setup instructions
-├── 📄 GITHUB_ACTIONS_README.md         # Workflow documentation
-├── 📄 CHECKLIST.md                     # Implementation checklist
-├── 📄 QUICK_REFERENCE.md               # Command reference
-├── 📄 ARCHITECTURE.md                  # Architecture diagrams
-├── 📄 DELIVERABLES.md                  # Project deliverables summary
-├── 📄 PROJECT_STRUCTURE.md             # This file
+├──  README.md                        # Main project documentation
+├──  SETUP_GUIDE.md                   # Detailed setup instructions
+├──  GITHUB_ACTIONS_README.md         # Workflow documentation
+├──  CHECKLIST.md                     # Implementation checklist
+├──  QUICK_REFERENCE.md               # Command reference
+├──  ARCHITECTURE.md                  # Architecture diagrams
+├──  DELIVERABLES.md                  # Project deliverables summary
+├──  PROJECT_STRUCTURE.md             # This file
 │
-└── 📜 setup-verify.ps1                 # Setup verification script
+└──  setup-verify.ps1                 # Setup verification script
 ```
 
 ## File Descriptions
 
-### 🔧 Core Terraform Files
+###  Core Terraform Files
 
 #### `main.tf`
 - **Purpose**: Root module that ties everything together
@@ -87,7 +87,7 @@ LAB_2/
 - **Note**: `.tfvars` should NOT be committed (in .gitignore)
 - **Example**: `.example` file shows format
 
-### 📦 Modules
+###  Modules
 
 #### `modules/vpc/`
 **Files**: main.tf, variables.tf, outputs.tf
@@ -137,7 +137,7 @@ LAB_2/
 **Outputs**:
 - Instance IDs and IP addresses
 
-### ⚙️ GitHub Actions
+###  GitHub Actions
 
 #### `.github/workflows/terraform.yml`
 **Purpose**: Main CI/CD workflow
@@ -175,7 +175,7 @@ LAB_2/
 - `bug_report.md` - For reporting bugs
 - `feature_request.md` - For requesting features
 
-### 🔒 Security & Configuration
+###  Security & Configuration
 
 #### `.checkov.yml`
 **Purpose**: Checkov configuration
@@ -205,7 +205,7 @@ LAB_2/
 - Secret detection
 - General file checks
 
-### 📚 Documentation
+###  Documentation
 
 #### `README.md`
 **Purpose**: Main project documentation
@@ -270,7 +270,7 @@ LAB_2/
 - Features implemented
 - Expected results
 
-### 🛠️ Utility Files
+###  Utility Files
 
 #### `Makefile`
 **Purpose**: Common command shortcuts
@@ -324,21 +324,21 @@ terraform.tfvars
 
 ## Important Notes
 
-### ✅ Files to Commit
+###  Files to Commit
 - All `.tf` files
 - All documentation (`.md`)
 - Workflow files (`.github/`)
 - Configuration files (`.checkov.yml`, `.gitignore`)
 - Templates and examples
 
-### ❌ Files NOT to Commit
+###  Files NOT to Commit
 - `terraform.tfvars` (contains sensitive data)
 - `*.tfstate` (state files)
 - `.terraform/` (provider plugins)
 - `*.pem`, `*.key` (SSH keys)
 - IDE-specific files
 
-### 🔐 Sensitive Information
+###  Sensitive Information
 Never commit:
 - AWS credentials
 - Access keys
@@ -406,7 +406,7 @@ Use:
 **Total Lines of Code/Docs**: 4000+ lines
 
 All files work together to provide:
-✅ Complete Infrastructure as Code
-✅ Full CI/CD Automation
-✅ Security Scanning
-✅ Comprehensive Documentation
+ Complete Infrastructure as Code
+ Full CI/CD Automation
+ Security Scanning
+ Comprehensive Documentation

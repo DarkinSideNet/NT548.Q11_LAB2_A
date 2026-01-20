@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-## 🏗️ AWS Infrastructure Architecture
+## AWS Infrastructure Architecture
 
 ### Network Topology
 ````````
@@ -79,7 +79,7 @@
 | Public | t2.micro | Public | Public SG | Yes |
 | Private | t2.micro | Private | Private SG | No |
 
-## 🔄 CI/CD Pipeline Architecture
+## CI/CD Pipeline Architecture
 
 ### GitHub Actions Workflow Flow
 ```
@@ -160,7 +160,7 @@ Event Trigger
             └─ destroy → Run Destroy
 ```
 
-## 🔐 Security Architecture
+## Security Architecture
 
 ### Secret Management Flow
 ```
@@ -206,7 +206,7 @@ AWS API Calls
    - Network isolation
    - Encryption at rest
 
-## 📊 Data Flow
+## Data Flow
 
 ### Terraform State Management
 ```
@@ -262,7 +262,7 @@ Developer → Commit → GitHub → Workflow → AWS
          └─ terraform apply
 ```
 
-## 🎯 Module Architecture
+## Module Architecture
 
 ### Terraform Module Structure
 ```
@@ -306,7 +306,7 @@ VPC Module
                           EC2 Module
 ```
 
-## 🔄 Environment Strategy
+## Environment Strategy
 
 ### Multi-Environment Architecture (Future)
 ```
@@ -328,7 +328,7 @@ Repository
         └─ vars: dev.tfvars
 ```
 
-## 📈 Monitoring & Observability (Future Enhancement)
+## Monitoring & Observability (Future Enhancement)
 
 ### Proposed Monitoring Stack
 ```
@@ -352,7 +352,7 @@ AWS Resources
             └─ SNS Topic → Email/Slack
 ```
 
-## 💰 Cost Architecture
+## Cost Architecture
 
 ### Cost Breakdown
 ```
@@ -378,7 +378,7 @@ Total Estimated: ~$64.00/month
 (With Free Tier: ~$47.00/month)
 ```
 
-## 🚀 Scalability Considerations
+## Scalability Considerations
 
 ### Future Enhancements
 1. **Auto Scaling Groups**: Auto-scale EC2 based on load
@@ -422,7 +422,7 @@ Total Estimated: ~$64.00/month
               └──────────────┘
 ```
 
-## 📚 References
+## References
 
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 - [Terraform Best Practices](https://www.terraform-best-practices.com/)

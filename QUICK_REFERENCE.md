@@ -1,6 +1,6 @@
 # Quick Reference - GitHub Actions & Terraform
 
-## 🚀 Common Commands
+##  Common Commands
 
 ### Local Development
 ```bash
@@ -83,7 +83,7 @@ aws ec2 describe-vpcs
 aws ec2 describe-key-pairs
 ```
 
-## 📋 GitHub Secrets
+##  GitHub Secrets
 
 ### Required Secrets
 | Secret Name | Description | Example |
@@ -102,7 +102,7 @@ aws ec2 describe-key-pairs
 4. Enter name and value
 5. Click **Add secret**
 
-## 🔄 Workflow Triggers
+##  Workflow Triggers
 
 ### Automatic Triggers
 - **Push to main/develop**: Runs all jobs except destroy
@@ -116,7 +116,7 @@ aws ec2 describe-key-pairs
 4. Select action: `plan`, `apply`, or `destroy`
 5. Click **Run workflow**
 
-## 🎯 Workflow Jobs
+##  Workflow Jobs
 
 | Job | When | Purpose |
 |-----|------|---------|
@@ -126,7 +126,7 @@ aws ec2 describe-key-pairs
 | `terraform-apply` | Push to main only | Deploy infrastructure |
 | `terraform-destroy` | Manual trigger only | Destroy infrastructure |
 
-## 📊 Workflow Status
+##  Workflow Status
 
 ### Check Status
 - Go to **Actions** tab
@@ -141,9 +141,9 @@ aws ec2 describe-key-pairs
    - `terraform-plan`
    - `terraform-outputs`
 
-## 🔒 Security Best Practices
+##  Security Best Practices
 
-### ✅ DO
+###  DO
 - Use GitHub Secrets for sensitive data
 - Enable branch protection on `main`
 - Require PR reviews before merge
@@ -153,7 +153,7 @@ aws ec2 describe-key-pairs
 - Use S3 backend for state
 - Regular security scans with Checkov
 
-### ❌ DON'T
+###  DON'T
 - Commit `.tfvars` files
 - Hardcode credentials in code
 - Force push to `main`
@@ -162,7 +162,7 @@ aws ec2 describe-key-pairs
 - Use admin AWS credentials
 - Disable security checks
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Workflow Fails - Authentication Error
 ```bash
@@ -208,7 +208,7 @@ terraform console
 aws service-quotas list-service-quotas --service-code ec2
 ```
 
-## 💰 Cost Management
+##  Cost Management
 
 ### Estimate Costs
 ```bash
@@ -240,7 +240,7 @@ infracost diff --path plan.json
 4. Use Spot instances for testing
 5. Monitor usage regularly
 
-## 🔗 Useful Links
+##  Useful Links
 
 ### Documentation
 - [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
@@ -254,7 +254,7 @@ infracost diff --path plan.json
 - [tfsec](https://aquasecurity.github.io/tfsec/)
 - [Terragrunt](https://terragrunt.gruntwork.io/)
 
-## 📞 Support
+##  Support
 
 ### File Issues
 1. Go to **Issues** tab
@@ -269,7 +269,7 @@ infracost diff --path plan.json
 - Review workflow logs
 - Check AWS documentation
 
-## 🎓 Learning Resources
+##  Learning Resources
 
 - [Terraform Tutorial](https://learn.hashicorp.com/terraform)
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
