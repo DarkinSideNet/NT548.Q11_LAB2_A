@@ -5,7 +5,7 @@
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-2088FF?logo=github-actions)](https://github.com/features/actions)
 [![Checkov](https://img.shields.io/badge/Checkov-Security-00C7B7?logo=checkov)](https://www.checkov.io/)
 
-> **LAB 2 - NT548.Q11**: Triển khai hạ tầng AWS tự động với Terraform và GitHub Actions
+> **LAB 2 - NT548.Q11**: Triển khai hạ tầng AWS tự động với Terraform và GitHub Actions...
 
 ## 📋 Mô tả
 Project này triển khai hạ tầng AWS sử dụng Terraform và tự động hóa quy trình CI/CD với GitHub Actions, bao gồm kiểm tra bảo mật với Checkov.
